@@ -1,0 +1,59 @@
+/*
+See index.html for instructions.
+*/
+
+@font-face {
+    font-family: "Tahoma";
+    src: url(./fonts/tahoma/Tahoma.ttf) format('truetype');
+  }
+
+@font-face {
+    font-family: "Impact";
+    src: url(./fonts/Impact-Font/impact.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: "Georgia";
+    src: url(./fonts/georgia/Georgia.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: "Verdana";
+    src: url(./fonts/verdana/VERDANA.TTF) format('truetype');
+  }
+
+* {
+    box-sizing: border-box;
+}
+
+/* To see the linea break in the first paragraph exactly on the same word you have to fix
+  the max-width of the screen at 888px, I leave it commented */
+body {
+    font-size: 16px;
+    font-family: Tahoma, sans-serif;
+    font-weight: 550;
+    /* max-width: 888px; */
+}
+
+.item-1 {
+    color: orange;
+    font-family: Verdana, sans-serif;
+}
+
+.item-2 {
+    font-family: Impact, sans-serif;
+    font-weight: 900;
+    color: red;
+    letter-spacing: 0.08em;
+}
+
+.item-3 {
+    font-family: Georgia, sans-serif;
+    color: pink;
+    font-family: Georgia, sans-serif;
+}
+
+li {
+    margin: 10px 0;
+}
+

@@ -1,0 +1,36 @@
+/*
+See index.html for instructions.
+*/
+
+* {
+    /* margin: 0; */
+    box-sizing: border-box;
+}
+
+.main,
+.main-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cat1,
+.cat2,
+.cat3 {
+    border: 4px solid blue;
+}
+
+.cat2 {
+    margin: auto;
+    border-color: #f7cc0de3;
+}
+
+.cat3 {
+    border-color: grey;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+

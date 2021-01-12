@@ -1,0 +1,54 @@
+/*
+See index.html for instructions.
+*/
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+}
+
+.box {
+    background: black;
+    margin: 4px;
+    width: 18em;
+    height: 18em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    width: 9em;
+    height: 9em;
+}
+
+.box-1 {
+    background: grey;
+}
+
+.box-1 .square-2 {
+    background: orange;
+}
+
+.box-2 .square-4 {
+    background: yellow;
+}
+
+.box-3 {
+    background: blue;
+}
+
+.box-3 .square-3 {
+    background: green;
+}
+
+.box-4 {
+    background: #810082;
+}
+
+.box-4 .square-1 {
+    background: #FFBFCB;
+}
+
+
