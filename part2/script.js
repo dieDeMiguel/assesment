@@ -74,6 +74,7 @@ getAverageLength();
 */
 
 // Exercise 1
+
 function createRiver(name, continent, lengthInKilometers) {
     let obj = {
         name: name,
@@ -113,9 +114,39 @@ rivers.push(mississippi);
 rivers.push(nile);
 rivers.push(volga);
 
+//Exercise 3
+
+function getRiverByName(name) {
+    for(let i=0; i<rivers.length; i++) {
+        if(rivers[i].name === name) {
+            console.log(rivers[i]);
+        }
+    }
+};
+
+function getRiverByContinent(continent) {
+    for(let i=0; i<rivers.length; i++) {
+        if(rivers[i].continent === continent) {
+            console.log(rivers[i]);
+        }
+    }
+};
+
+function getAverageLength(array) {
+    counter = 0;
+    for(let i=0; i<rivers.length; i++) {
+        counter += array[i].lengthInKilometers;
+    }
+    console.log(counter/(array.length + 1));
+}
+
+//getAverageLength(rivers);
+
+//getRiverByContinent('Asia');
+
 
 //console.log(amazon.isLongerThan(danube));
-//console.log(amazon.logRiver());
+//console.log(danube.logRiver());
 
 
 //console.log(rivers);
