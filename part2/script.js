@@ -140,15 +140,6 @@ function getAverageLength(array) {
     console.log(counter/(array.length + 1));
 }
 
-//getAverageLength(rivers);
 
-//getRiverByContinent('Asia');
-
-
-//console.log(amazon.isLongerThan(danube));
-//console.log(danube.logRiver());
-
-
-//console.log(rivers);
 
 
