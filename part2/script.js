@@ -72,3 +72,52 @@ getRiversByContinent('Europe');
 
 getAverageLength();
 */
+
+// Exercise 1
+function createRiver(name, continent, lengthInKilometers) {
+    let obj = {
+        name: name,
+        continent: continent,
+        lengthInKilometers: lengthInKilometers,
+        isLongerThan: function(river) {
+            if(river.lengthInKilometers > this.lengthInKilometers) {
+                return true;
+            } else {
+                return false;
+            };
+        },
+        logRiver: function() {
+          console.log('The ' + this.name + " river is " + this.lengthInKilometers + " long.");
+        }
+    }
+    return obj;
+}
+
+// Exercise 2
+
+var amazon = createRiver('Amazon', "America", 6575);
+var danube = createRiver('Danube', 'Europe', 2850);
+var ganges = createRiver('Asia', 'Asia', 2704);
+var mekong = createRiver('Mekon', 'Asia', 4350);
+var mississippi = createRiver('Missisipi', 'North America', 3730);
+var nile = createRiver('Nile', 'Africa', 6650);
+var volga = createRiver('Volga', 'Europe', 3530);
+
+
+let rivers = [];
+rivers.push(amazon);
+rivers.push(danube);
+rivers.push(ganges);
+rivers.push(mekong);
+rivers.push(mississippi);
+rivers.push(nile);
+rivers.push(volga);
+
+
+//console.log(amazon.isLongerThan(danube));
+//console.log(amazon.logRiver());
+
+
+//console.log(rivers);
+
+
