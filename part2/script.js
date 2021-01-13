@@ -81,14 +81,14 @@ function createRiver(name, continent, lengthInKilometers) {
         continent: continent,
         lengthInKilometers: lengthInKilometers,
         isLongerThan: function(river) {
-            if(river.lengthInKilometers > this.lengthInKilometers) {
+            if(this.lengthInKilometers > river.lengthInKilometers) {
                 return true;
             } else {
                 return false;
             };
         },
         logRiver: function() {
-          console.log('The ' + this.name + " river is " + this.lengthInKilometers + " long.");
+          return console.log('The ' + this.name + " river is " + this.lengthInKilometers + " kilometers long.");
         }
     }
     return obj;
@@ -96,10 +96,10 @@ function createRiver(name, continent, lengthInKilometers) {
 
 // Exercise 2
 
-var amazon = createRiver('Amazon', "America", 6575);
+var amazon = createRiver('Amazon', "South America", 6575);
 var danube = createRiver('Danube', 'Europe', 2850);
-var ganges = createRiver('Asia', 'Asia', 2704);
-var mekong = createRiver('Mekon', 'Asia', 4350);
+var ganges = createRiver('Ganges', 'Asia', 2704);
+var mekong = createRiver('Mekong', 'Asia', 4350);
 var mississippi = createRiver('Missisipi', 'North America', 3730);
 var nile = createRiver('Nile', 'Africa', 6650);
 var volga = createRiver('Volga', 'Europe', 3530);
@@ -116,29 +116,55 @@ rivers.push(volga);
 
 //Exercise 3
 
+// This function returns a String in case of no match, otherwise "undefined" would be returned which gives no feedback to the user.
+//'name' and 'rivers[element].name' are not sanitized, so the function is case sensitive.
 function getRiverByName(name) {
-    for(let i=0; i<rivers.length; i++) {
-        if(rivers[i].name === name) {
-            console.log(rivers[i]);
-        }
-    }
+    for(let element in rivers) {
+        if(rivers[element].name == name) {
+            return rivers[element];
+        } 
+    } 
+    return "Unable to find a river with the provided name";
 };
 
+//Same here, function returns a String in case of no match.
+//'continent' and 'rivers[element].continent' are not sanitized, so the function is case sensitive.
 function getRiverByContinent(continent) {
-    for(let i=0; i<rivers.length; i++) {
-        if(rivers[i].continent === continent) {
-            console.log(rivers[i]);
-        }
+    let riverList = [];
+    for(let element in rivers) {
+        if(rivers[element].continent === continent) {
+            riverList.push(rivers[element]);
+        } 
+    } if (riverList.length == 0) {
+        return "Unable to find river/s with the provided continent"
     }
+    return riverList;
 };
 
 function getAverageLength(array) {
     counter = 0;
-    for(let i=0; i<rivers.length; i++) {
-        counter += array[i].lengthInKilometers;
+    for(let element in array) {
+        counter += array[element].lengthInKilometers;
     }
-    console.log(counter/(array.length + 1));
+    return  counter/(array.length + 1) + 'Km';
 }
+
+
+
+// Tests
+
+// Exercise 1:
+    //console.log(mississippi.logRiver());
+    //console.log(mississippi.isLongerThan(ganges));
+
+// Exercise 2: 
+    //console.log(rivers);
+
+// Exercise 3:
+    //console.log(getRiverByName('Volga'));
+    //console.log(getRiverByContinent('Europe'));
+    //console.log(getAverageLength(rivers));
+
 
 
 
