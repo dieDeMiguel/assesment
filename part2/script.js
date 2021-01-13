@@ -59,7 +59,7 @@ array to determine what to return.
 You can test your code by opening index.html in Chrome and using the console
 (see http://jsforcats.com/ for instructions on using the console). After you
 correct any errors you see when you open the console, you can run commands such
-as those below and verify the output.
+as those below and verify the output.//
 
 var amazon = getRiverByName('Amazon');
 var nile = getRiverByName('Nile');
@@ -72,6 +72,7 @@ getRiversByContinent('Europe');
 
 getAverageLength();
 */
+
 
 // Exercise 1
 
@@ -90,7 +91,7 @@ function createRiver(name, continent, lengthInKilometers) {
         logRiver: function() {
           return console.log('The ' + this.name + " river is " + this.lengthInKilometers + " kilometers long.");
         }
-    }
+    };
     return obj;
 }
 
@@ -117,19 +118,19 @@ rivers.push(volga);
 //Exercise 3
 
 // This function returns a String in case of no match, otherwise "undefined" would be returned which gives no feedback to the user.
-//'name' and 'rivers[element].name' are not sanitized, so the function is case sensitive.
+//Both 'name' and 'rivers[element].name' are not sanitized, so the function is case sensitive.
 function getRiverByName(name) {
     for(let element in rivers) {
         if(rivers[element].name == name) {
             return rivers[element];
         } 
-    } 
+    };
     return "Unable to find a river with the provided name";
 };
 
 //Same here, function returns a String in case of no match.
-//'continent' and 'rivers[element].continent' are not sanitized, so the function is case sensitive.
-function getRiverByContinent(continent) {
+//Both 'continent' and 'rivers[element].continent' are not sanitized, so the function is case sensitive.
+function getRiversByContinent(continent) {
     let riverList = [];
     for(let element in rivers) {
         if(rivers[element].continent === continent) {
@@ -141,29 +142,17 @@ function getRiverByContinent(continent) {
     return riverList;
 };
 
-function getAverageLength(array) {
+function getAverageLength() {
     counter = 0;
-    for(let element in array) {
-        counter += array[element].lengthInKilometers;
-    }
-    return  counter/(array.length + 1) + 'Km';
-}
+    for(let element in rivers) {
+        counter += rivers[element].lengthInKilometers;
+    };
+    var avg = counter/rivers.length
+    return Math.round(avg) + 'Km';
+};
 
 
 
-// Tests
-
-// Exercise 1:
-    //console.log(mississippi.logRiver());
-    //console.log(mississippi.isLongerThan(ganges));
-
-// Exercise 2: 
-    //console.log(rivers);
-
-// Exercise 3:
-    //console.log(getRiverByName('Volga'));
-    //console.log(getRiverByContinent('Europe'));
-    //console.log(getAverageLength(rivers));
 
 
 
