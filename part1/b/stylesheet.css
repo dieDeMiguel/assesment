@@ -12,15 +12,15 @@ See index.html for instructions.
 .box {
     background: black;
     margin: 4px;
-    width: 18em;
-    height: 18em;
+    width: 324px;
+    height: 324px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .square {
-    width: 9em;
-    height: 9em;
+    width: 162px;
+    height: 162px;
 }
 
 .box-1 {
